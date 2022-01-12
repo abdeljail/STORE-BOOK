@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
 const app = express();
-
 ///
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -24,11 +23,13 @@ if (app.get("env") === "development") {
       },
     })
   );
-  //
 }
 
-app.get("/", (req, res, next) => {
-  res.render("home", {srcLinkCss:"./css/style.css",namePage:"home"});
+app.get("/", function (req, res) {
+  res.render("home", { srcLinkCss: "./css/style.css", namePage: "home" });
+});
+app.get("/singup", function (req, res) {
+  res.render("singup", { srcLinkCss: "./css/singup.css", namePage: "singup" });
 });
 
 app.listen(port, () => {
