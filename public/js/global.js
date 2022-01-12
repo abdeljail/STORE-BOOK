@@ -16,8 +16,6 @@ const show_nav = document.getElementById("show-nav");
 
 const nav = document.getElementById("nav");
 
-
-
 // function add class
 const addClass = ([el, nameClass]) => {
   el.classList.add(nameClass);
@@ -56,6 +54,11 @@ deep.addEventListener("click", (e) => {
 });
 
 // add event click for btn show_nav
-show_nav.addEventListener("click", () => {
-  toggleClass([nav, "show-nav"]);
-});
+
+if (window.innerWidth <= 767) {
+  console.log("yes");
+  show_nav.addEventListener("click", () => {
+    toggleClass([nav, "show-nav"]);
+    toggleClass([show_nav.firstElementChild, "fa-times"]);
+  });
+}
