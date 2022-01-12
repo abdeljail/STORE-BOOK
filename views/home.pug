@@ -1,0 +1,30 @@
+//- include file head
+include ../components/global/head.pug
+//- include file start body 
+include ../components/global/body.pug
+//- include file haeder
+include ../components/global/header.pug
+
+.deep.position-absolute.w-100.h-100(id="deep")
+.send_form.pt-5.position-absolute.d-flex.justify-content-center.align-items-start(id="from_search")
+    form.d-flex.justify-content-start(action="" method="get")
+        input(class="px-2 border-start border-white border-bottom border-top border-2 py-1 outline-0 rounded-start" type="search" placeholder="dkldkldkdlkldkdldl")
+        button(id="send" class="btn rounded-0 text-white" type="submit") <i class="fas fa-search"></i>
+.home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- include file footer
+include ../components/global/footer.pug
+script(src="./js/global.js") 

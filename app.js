@@ -28,7 +28,7 @@ if (app.get("env") === "development") {
 }
 
 app.get("/", (req, res, next) => {
-  res.render("index", {});
+  res.render("home", {srcLinkCss:"./css/style.css",namePage:"home"});
 });
 
 app.listen(port, () => {

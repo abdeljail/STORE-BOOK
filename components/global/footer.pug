@@ -1,0 +1,102 @@
+
+-
+    const ShoppingOnline = [
+    {
+        name:"Order Status",
+        link:""
+    }, 
+    {
+        name:"Shipping and Delivery",
+        link:""
+    }, 
+    {
+        name:"Returns",
+        link:""
+    }, 
+    {
+        name:"Payment Options",
+        link:""
+    },
+    {
+        name:"Contact Us",
+        link:""
+    }, 
+    {
+        name:"Shopping online",
+        link:""
+    }, 
+    {
+        name:"Shopping online",
+        link:""
+    }];
+    const Information = [{
+        name:"Gift Cards",
+        link:""
+    }, 
+    {
+        name:"Find a store",
+        link:""
+    }, 
+    {
+        name:"Newsletter",
+        link:""
+    },
+    {
+        name:"Bacome a member",
+        link:""
+    },
+    {
+        name:"Site feedback",
+        link:""
+    }, 
+    ];
+    const Contact = [{
+        name:"store@uikit.com",
+        link:""
+    }, 
+    {
+        name:"Hotline: +1 131 138 138",
+        link:""
+    }, 
+    {
+        name:"Newsletter",
+        link:""
+    },
+    {
+        name:"Site feedback",
+        link:""
+    }, 
+    ];
+    const iconsSoc = ["linkedin-in","twitter","youtube","facebook-f","instagram"]
+footer(class="pt-5")
+    .footer-top.pb-4
+        div(class="container-fluid mx-auto")
+            div.row
+                .py-3.col-sm-12.col-md-6.col-lg-6
+                    a(href="/")
+                        img( class="logo" src="./image/logo.png" alt="image logo in app")
+                    p.fs-6 House My Brand salle books everyone in between , but most importantly, for the fashionable
+                    div.d-flex.justify-content-start.align-items-center
+                        each icon in iconsSoc
+                            a.px-2.mx-2.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border 
+                                i(class="w-50 fab fa-"+icon)
+                .py-3.col-sm-12.col-md-6.col-lg-2
+                    h4.text-gray-500.fs-6 Shopping online
+                    each opjLink  in ShoppingOnline
+                        li.list-inline  
+                            a.h-4.fs-7.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border(href=opjLink.link)= opjLink.name
+
+                .py-3.col-sm-12.col-md-6.col-lg-2
+                    h4.text-gray-500.fs-6 Information
+                    each opjLink  in Information
+                        li.list-inline  
+                            a.h-4.fs-7.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border(href=opjLink.link)= opjLink.name
+
+                .py-3.col-sm-12.col-md-6.col-lg-2
+                    h4.text-gray-500.fs-6 Contact
+                    each opjLink  in Contact
+                        li.list-inline  
+                            a.h-4.fs-7.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border(href=opjLink.link)= opjLink.name
+    .footer-bottom.py-4.border-1.border-top.bg-black 
+        .container 
+            p.text-white.text-center.m-0 Production BY Abdeljali Khalal  - © 2019. ALL RIGHTS RESERVED.
