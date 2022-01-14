@@ -1,9 +1,42 @@
+
+-
+    const h2 = "Create an account and discover the benefits";
+    const p = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+
+
+
 //- include file head
 include ../components/global/head.pug
 //- include file start body 
 include ../components/global/body.pug
 
-h1 kkdkdkdkkdkdkdkdkdk
+.page-singup 
+    .content.d-flex.justify-content-center.align-items-center.h-100
+        span.position-absolute.d-flex.justify-content-center.align-items-center(id="link")
+            <i class="fas fa-times text-white"></i> 
+        .box-content.bg-white 
+            div.content.d-flex.justify-content-center
+                .bg-img.w-50.h-100.position-relative
+                    div.position-absolute.w-100.h-100
+                    img.w-100.h-100(src="./image/sign.png" alt=" image singup")
+                .form.w-50.py-2.px-4 
+                    .content-form 
+                        //- include component headingPara
+                        include ../components/pages/headingPara.pug
+                        - let  Name = "first Name"
+                        //- include component inputName
+                        include ../components/pages/inputName.pug
+                        - Name = "last Name"
+                        //- include component inputName 
+                        include ../components/pages/inputName.pug
+                        //- include component inputEmail
+                        include ../components/pages/inputEmail.pug
+                        //- include component inputPassword
+                        include ../components/pages/inputPassword.pug
+                        - Name = "Sign up"
+                        //- include component inputPassword
+                        include ../components/pages/buttonSend.pug
+
 
 //- include file singup
 script(src="./js/singup.js") 

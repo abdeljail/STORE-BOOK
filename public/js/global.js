@@ -56,7 +56,6 @@ deep.addEventListener("click", (e) => {
 // add event click for btn show_nav
 
 if (window.innerWidth <= 767) {
-  console.log("yes");
   show_nav.addEventListener("click", () => {
     toggleClass([nav, "show-nav"]);
     toggleClass([show_nav.firstElementChild, "fa-times"]);
