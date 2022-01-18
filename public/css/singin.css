@@ -1,0 +1,128 @@
+:root {
+  --after: "0";
+}
+p {
+  font-size: 14px;
+}
+input,
+button {
+  outline: none;
+}
+button {
+  transition: transform 0.4s ease-out !important;
+}
+button:focus {
+  box-shadow: none !important;
+}
+input:focus {
+  border-color: #000000 !important;
+}
+.not-allowed {
+  background-color: #878787 !important;
+  cursor: not-allowed !important;
+}
+button.bg-black:hover {
+  transform: scale(1.05, 1.05);
+}
+.success {
+  transition: border 0.2s linear;
+  border: 2px solid #ff7b4b !important;
+}
+.error {
+  transition: border 0.2s linear;
+  border: 2px solid #ff0000 !important;
+}
+.page-singup {
+  height: 100vh;
+  max-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    #dc3545,
+    #ff7b4b,
+    #ff7b4b,
+    #000000
+  );
+  background-color: #f0f2f4;
+}
+.page-singup::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 62%);
+  z-index: var(--after);
+}
+.content > span {
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: #ff7b4b8e;
+  box-shadow: 0px 11px 0px 0px #000;
+  z-index: 2;
+  transition: 0.3s ease-in;
+}
+.content > span:hover {
+  box-shadow: 0px 11px 0px -20px #000;
+  background-color: rgba(0, 0, 0, 0.74);
+}
+.content > span i {
+  font-size: 26px;
+}
+.box-content {
+  width: 640px;
+  max-height: 100%;
+  z-index: 1;
+}
+.bg-img div {
+  background-color: #0000008c;
+}
+.loading {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 4px solid #eee;
+  background-color: #ff7b4b8e;
+  animation: loding 1s linear infinite;
+  border-color: #ff7b4b #ff7b4b #ff7b4b #eee;
+}
+@keyframes loding {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.message {
+  width: 280px;
+  max-width: 280px;
+  z-index: 4;
+  bottom: -400px;
+  transition: 0.5s linear;
+}
+.message h4 span:last-child {
+  cursor: pointer;
+}
+@media screen and (max-width: 660px) {
+  .box-content {
+    width: 300px !important;
+  }
+  .box-content .bg-img {
+    display: none !important;
+  }
+  .box-content .form {
+    width: 100% !important;
+  }
+}
+
+
+
