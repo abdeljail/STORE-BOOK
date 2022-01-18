@@ -1,9 +1,13 @@
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
+
+const singUp = require("./routers/singUp.router");
+const home = require("./routers/home.router");
+
 const app = express();
 ///
-
+app.use(express.json({ limit: "1kb" }));
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -25,12 +29,15 @@ if (app.get("env") === "development") {
   );
 }
 
-app.get("/", function (req, res) {
-  res.render("home", { srcLinkCss: "./css/style.css", namePage: "home" });
-});
-app.get("/singup", function (req, res) {
-  res.render("singup", { srcLinkCss: "./css/singup.css", namePage: "singup" });
-});
+///
+
+app.use("/", singUp);
+
+///
+
+app.use("/", home);
+
+///
 
 app.listen(port, () => {
   console.log(nodeEnv);
