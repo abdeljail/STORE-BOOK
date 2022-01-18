@@ -17,6 +17,8 @@ const password = document.getElementById("password");
 // span in redirct page
 const link = document.getElementById("link");
 
+const message = document.getElementById("message");
+
 getComputedStyle(document.body);
 
 ///
@@ -148,18 +150,52 @@ password.addEventListener("blur", (e) => {
 
 // add event click on button send for singup
 send.addEventListener("click", (e) => {
+  if (!password.value.length) return;
   document.documentElement.style.setProperty("--after", "1");
   send.firstElementChild.textContent = null;
   addClass([send.firstElementChild, "loading"]);
-  const dt = new FormData();
-  dt.append("name", First_Name);
-  dt.append("name", Last_Name);
-  dt.append("name", email);
-  dt.append("name", password);
-  // fetch("", {
-  //   body: dt,
-  //   method: post,
-  // }).;
+  const dt = {
+    First_Name: First_Name.value,
+    Last_Name: Last_Name.value,
+    email: email.value,
+    password: password.value,
+  };
+  fetch("/singup", {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dt),
+    method: "post",
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.message) {
+        window.location = "/";
+        return;
+      }
+      if (!res.message) {
+        document.documentElement.style.setProperty("--after", "0");
+        send.firstElementChild.textContent = "send";
+        removeClass([send.firstElementChild, "loading"]);
+        message.firstElementChild.firstElementChild.textContent =
+          "this is email is found ";
+        message.lastChild.firstElementChild.src = "./image/error.png";
+        addClass([message, "bottom-0"]);
+        return;
+      }
+      console.log("server in errr 500");
+    });
+});
+
+// add event click for icon close in message
+message.firstElementChild.addEventListener("click", () => {
+  removeClass([message, "bottom-0"]);
+  addClass([send, "not-allowed"]);
+  removeClass([send, "bg-black"]);
+  err.push(email);
+  err.push(password);
+  email.value = "";
+  password.value = "";
 });
 
 link.addEventListener(

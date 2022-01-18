@@ -1,5 +1,5 @@
-:root{
-  --after:"0"
+:root {
+  --after: "0";
 }
 p {
   font-size: 14px;
@@ -8,8 +8,8 @@ input,
 button {
   outline: none;
 }
-button  {
-  transition: transform .4s ease-out !important;
+button {
+  transition: transform 0.4s ease-out !important;
 }
 button:focus {
   box-shadow: none !important;
@@ -102,6 +102,16 @@ button.bg-black:hover {
   }
 }
 
+.message {
+  width: 280px;
+  max-width: 280px;
+  z-index: 4;
+  bottom: -400px;
+  transition: 0.5s linear;
+}
+.message h4 span:last-child {
+  cursor: pointer;
+}
 @media screen and (max-width: 660px) {
   .box-content {
     width: 300px !important;
