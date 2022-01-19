@@ -23,7 +23,11 @@ exports.loginUser = (user) => {
         mongoose.disconnect();
         if (s)
           bcrypt.compare(user.password, s.password).then((verif) => {
-            if (verif) resolve(true);
+            if (verif)
+              resolve({
+                _id: s._id,
+                message: true,
+              });
             else reject(false);
           });
         else reject("not found");

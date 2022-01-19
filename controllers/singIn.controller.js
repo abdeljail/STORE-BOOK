@@ -17,11 +17,15 @@ exports.getSingIn = (request, response, next) => {
 exports.responsveLoginUser = (request, response, next) => {
   modelSingIn
     .loginUser(request.body)
-    .then((res) =>
+    .then((res) => {
+      request.session.userId = res._id;
+      console.log(request.session);
+      console.log(request.session.userId);
+      // request.redirect('/')
       response.json({
-        message: true,
-      })
-    )
+        message: res.message,
+      });
+    })
     .catch((err) =>
       response.json({
         message: err,
