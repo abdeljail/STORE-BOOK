@@ -13,8 +13,13 @@ const deep = document.getElementById("deep");
 const show_nav = document.getElementById("show-nav");
 
 // div nav
-
 const nav = document.getElementById("nav");
+
+// button loguot client
+const logOut = document.getElementById("logout");
+
+// div profile
+const profile = document.getElementById("profile");
 
 // function add class
 const addClass = ([el, nameClass]) => {
@@ -31,6 +36,31 @@ const toggleClass = ([el, nameClass]) => {
   el.classList.toggle(nameClass);
 };
 
+if (logOut) {
+  // add event click for show profile user
+  profile.addEventListener("click", () => {
+    toggleClass([profile.nextElementSibling, "active"]);
+  });
+  // add event click for show profile user
+  profile.addEventListener("blur", () => {
+    removeClass([profile.nextElementSibling, "active"]);
+  });
+  // add event click for logout
+  logOut.addEventListener("click", () => {
+    fetch("./logout", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "get",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.message) {
+          window.location.href = "/singin";
+        }
+      });
+  });
+}
 // add event click for button in id = show_from
 show_from.addEventListener("click", (e) => {
   toggleClass([from_search, "overly"]);
@@ -55,9 +85,8 @@ deep.addEventListener("click", (e) => {
 
 // add event click for btn show_nav
 
-if (window.innerWidth <= 767) {
+if (window.innerWidth <= 767)
   show_nav.addEventListener("click", () => {
     toggleClass([nav, "show-nav"]);
     toggleClass([show_nav.firstElementChild, "fa-times"]);
   });
-}

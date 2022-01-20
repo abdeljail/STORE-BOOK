@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const { promise, reject } = require("bcrypt/promises");
 
 ///
 
@@ -10,6 +9,7 @@ const schemaUser = mongoose.Schema({
   Last_Name: String,
   email: String,
   password: String,
+  Src_Img: String,
 });
 
 // create url connect db
@@ -42,6 +42,7 @@ exports.addNweUser = (user) => {
           Last_Name: user.Last_Name,
           email: user.email,
           password: hashPassord,
+          Src_Img: "profile.png"
         });
         return s.save();
       })

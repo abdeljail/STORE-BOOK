@@ -18,10 +18,10 @@ exports.responsveLoginUser = (request, response, next) => {
   modelSingIn
     .loginUser(request.body)
     .then((res) => {
-      request.session.userId = res._id;
-      console.log(request.session);
-      console.log(request.session.userId);
-      // request.redirect('/')
+      request.session.userId = res._user._id;
+      request.session.First_Name = res._user.First_Name;
+      request.session.Last_Name = res._user.Last_Name;
+      request.session.Src_Img = res._user.Src_Img;
       response.json({
         message: res.message,
       });

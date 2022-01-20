@@ -1,12 +1,13 @@
 const router = require("express").Router();
 const ControllerSingIn = require("../controllers/singIn.controller");
+const isPages = require("./guard");
 // const body = require("express").urlencoded({ extends: true });
 
 ///
 
 /// router for page singin for  method GET
 
-router.get("/singin", ControllerSingIn.getSingIn);
+router.get("/singin", isPages.isNotLogin, ControllerSingIn.getSingIn);
 
 ///
 

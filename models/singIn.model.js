@@ -21,16 +21,16 @@ exports.loginUser = (user) => {
       .then(() => User.findOne({ email: user.email }))
       .then((s) => {
         mongoose.disconnect();
-        if (s)
+        if (s) {
           bcrypt.compare(user.password, s.password).then((verif) => {
             if (verif)
               resolve({
-                _id: s._id,
+                _user: s,
                 message: true,
               });
             else reject(false);
           });
-        else reject("not found");
+        } else reject("not found");
       })
       .catch((err) => {
         reject(err);

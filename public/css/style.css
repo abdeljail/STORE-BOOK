@@ -4,6 +4,9 @@
   --secondary1: #0a0909;
   --pr: #000000e0;
 }
+*{
+  user-select: none;
+}
 body.no_scroll {
   overflow: hidden;
 }
@@ -81,6 +84,48 @@ header button:focus {
 }
 header ul {
   flex-grow: 2;
+}
+.profile > div:first-child {
+  width: 50px;
+  height: 50px;
+  border-color: var(--primary) !important;
+  cursor: pointer;
+}
+.profile > div:first-child::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #eb4d13;
+  top: 0;
+  left: 0;
+  transform: scale(0, 0) rotate(40deg);
+  transition: 0.3s ease-in-out;
+}
+.profile > div:first-child img {
+  transition: 0.2s ease 0.1s;
+}
+.profile > div:first-child:hover img {
+  transform: scale(1.5, 1.5) rotate(-10deg);
+}
+.profile > div:first-child:hover:after {
+  transform: scale(1.5, 1.5) rotate(-10deg);
+  background-color: #eb4d1363;
+  border: 0%;
+}
+.profile > div:last-child {
+  width: 200px;
+  background-color: var(--pr);
+  top: 63px;
+  right: -10px;
+  transform: translateY(80px) scale(0, 0);
+  transition: .3s ease-in-out;
+}
+.profile > div:last-child.active{
+  transform: translateY(0px) scale(1, 1);
+}
+.profile > div:last-child button {
+  background-color: var(--primary);
 }
 /* end header */
 /* start footer */

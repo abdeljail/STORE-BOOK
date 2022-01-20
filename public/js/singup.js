@@ -170,7 +170,7 @@ send.addEventListener("click", (e) => {
     .then((res) => res.json())
     .then((res) => {
       if (res.message) {
-        window.location = "/";
+        window.location = "/singin";
         return;
       }
       if (!res.message) {

@@ -25,18 +25,20 @@ app.use(
 
 ///
 
+app.use(express.json({ limit: "1kb" }));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "uploads")));
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
+///
+
 // include the rounting pages
 
 const home = require("./routers/home.router");
 const singUp = require("./routers/singUp.router");
 const singIn = require("./routers/singIn.router");
-
-///
-
-app.use(express.json({ limit: "1kb" }));
-app.use(express.static(path.join(__dirname, "public")));
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
+const logOut = require("./routers/logOut.router");
 
 ///
 
@@ -70,6 +72,19 @@ app.use("/", singUp);
 app.use("/", singIn);
 
 ///
+
+///
+
+app.use("/", logOut);
+
+///
+
+app.get("*", (request, response, next) => {
+  response.render("errors/err404", {
+    namePage: "not found ",
+    statute: "error 404",
+  });
+});
 
 app.listen(port, () => {
   console.log(nodeEnv);

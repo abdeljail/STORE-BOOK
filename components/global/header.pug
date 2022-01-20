@@ -16,9 +16,23 @@ header.bg-black.py-1
                                 a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border categories
                             li.list-inline
                                 a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border salle
-                            li.list-inline
-                                a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border sign in
-                            li.list-inline
-                                a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border(href="/singup") sign up
+                            -if(!user.id)
+                                li.list-inline
+                                    a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border sign in
+                                li.list-inline
+                                    a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border(href="/singup") sign up
+                            -else 
+                                li.profile.list-inline.position-relative
+                                    div.position-relative.overflow-hidden.rounded-circle.border.border-2(id="profile" tabindex="0")
+                                        img.w-100.h-100(src= "/images/"+ user.srcImg alt="image user")
+                                    div.rounded.position-absolute
+                                        div
+                                            p.text-capitalize.text-white.m-0.py-3.px-2= user.name
+                                        div 
+                                            a.text-capitalize.d-block.py-3.px-2(href="http://") setting
+                                        div 
+                                            button.border-0.text-white.w-100.d-block.py-3.px-2(id="logout") logOut
+
+
                 button.text-white.btn.d-block.d-md-none(id="show-nav") 
                     <i class="fas fa-bars"></i>
