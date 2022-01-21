@@ -27,8 +27,12 @@ app.use(
 
 app.use(express.json({ limit: "1kb" }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "admin/")));
 app.use(express.static(path.join(__dirname, "uploads")));
-app.set("views", path.join(__dirname, "views"));
+app.set("views", [
+  path.join(__dirname, "views"),
+  path.join(__dirname, "/admin/views"),
+]);
 app.set("view engine", "pug");
 
 ///
@@ -57,6 +61,8 @@ if (app.get("env") === "development") {
   );
 }
 
+/// start pages the clients
+
 ///
 
 app.use("/", home);
@@ -78,6 +84,20 @@ app.use("/", singIn);
 app.use("/", logOut);
 
 ///
+
+/// end pages the clients
+
+/// start pages the admins
+
+app.get("/data", (request, response, next) => {
+  console.log(path.join(__dirname, "admin/public"));
+  response.render("login", {
+    namePage: "admin",
+    srcLinkCss:"public/css/style.css"
+  });
+});
+
+/// end pages the admins
 
 app.get("*", (request, response, next) => {
   response.render("errors/err404", {
