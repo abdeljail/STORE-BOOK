@@ -1,0 +1,30 @@
+//- include file head
+include ../components/global/head.pug
+//- include file start body 
+include ../components/global/body.pug
+
+.page-singup
+    div 
+        h1.text-center.text-white.pt-4 login
+    .content.d-flex.justify-content-center.align-items-center.h-100
+        .box-content.d-flex.justify-content-center.align-items-center
+            div.content.d-flex.justify-content-center.w-100
+                .form.w-100.py-5.px-1.d-flex.justify-content-center.align-items-center 
+                    .content-form.py-2.w-100.px-1
+                        //- include component headingPara
+                        include ../components/pages/headingPara.pug
+                        //- include component inputEmail
+                        include ../components/pages/inputEmail.pug
+                        //- include component inputPassword
+                        include ../components/pages/inputPassword.pug
+                        - Name = "Sign in"
+                        //- include component inputPassword
+                        include ../components/pages/buttonSend.pug
+
+
+
+//- include file message  
+include ../components/global/message.pug
+
+//- include file singup
+//- script(src="./js/singin.js")
