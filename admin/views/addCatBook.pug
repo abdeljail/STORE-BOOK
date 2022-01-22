@@ -1,0 +1,31 @@
+//- include file head
+include ../components/global/head.pug
+//- include file start body 
+include ../components/global/body.pug
+//- include file haeder
+include ../components/global/header.pug
+
+.cat.d-flex
+
+    //- include file haeder
+    include ../components/global/navigation.pug
+
+    .content-cat.py-5.px-3
+        div.d-flex.justify-content-between.align-items-center 
+            h1.text-capitalize.fs-3 add category book
+            span.d-block.rounded.fs-3.d-flex.justify-content-center.align-items-center#link
+                <i class="fas fa-times text-white"></i> 
+
+        .from.d-flex.justify-content-center.align-items-center.pt-5
+            div.py-5.px-4.border-top.border-2
+                //- include component name 
+                - Name = "enter name category"
+                include ../components/pages/inputName.pug
+                - Name = "send"
+                //- include component button send
+                include ../components/pages/buttonSend.pug
+
+//- include component message 
+include ../components/global/message.pug
+//- include file singup
+script(src="/public/js/addCatBook.js")
