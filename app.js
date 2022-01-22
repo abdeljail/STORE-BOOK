@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
 const session = require("express-session");
-var MongoDBStore = require("connect-mongodb-session")(session);
+const MongoDBStore = require("connect-mongodb-session")(session);
 
 const app = express();
 
@@ -39,10 +39,20 @@ app.set("view engine", "pug");
 
 // include the rounting pages
 
+// client
+
 const home = require("./routers/home.router");
 const singUp = require("./routers/singUp.router");
 const singIn = require("./routers/singIn.router");
 const logOut = require("./routers/logOut.router");
+
+// admin
+
+const login = require("./routers/login.router");
+const dach = require("./routers/dach.router");
+const addBook = require("./routers/addBook.router");
+const addCatBook = require("./routers/addCatBook.router");
+const editCatBook = require("./routers/editCatBook.router");
 
 ///
 
@@ -79,8 +89,6 @@ app.use("/", singIn);
 
 ///
 
-///
-
 app.use("/", logOut);
 
 ///
@@ -89,13 +97,23 @@ app.use("/", logOut);
 
 /// start pages the admins
 
-app.get("/data", (request, response, next) => {
-  console.log(path.join(__dirname, "admin/public"));
-  response.render("login", {
-    namePage: "admin",
-    srcLinkCss:"public/css/style.css"
-  });
-});
+app.use("/", login);
+
+///
+
+app.use("/", dach);
+
+///
+
+app.use("/", addBook);
+
+///
+
+app.use("/", addCatBook);
+
+///
+
+app.use("/", editCatBook);
 
 /// end pages the admins
 

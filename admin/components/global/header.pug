@@ -1,37 +1,40 @@
-header.bg-black.py-1
+header.bg-white
     nav 
-        .container-fluid
-            .nav.d-flex.justify-content-between.align-items-center.py-2
-                .logo.flex-grow-1
-                    a(class="rounded link-h p-2 border-2 border" href="/")
-                        img(class="logo" src="./image/logo.png" alt=" image logo site", )
-                .search.flex-grow-1.d-flex.justify-content-end.justify-content-sm-end.justify-content-md-center
-                    .form.c-pointer
-                        button.btn(id="show_from")
-                            <i class="text-white fas fa-search"></i>
-                .nav-ul.flex-grow-1.d-flex.justify-content-end.d-none.d-md-block.tra-1(id="nav")  
-                    div
-                        ul.p-0.w-100.d-flex.m-0.justify-content-evenly.align-items-center
-                            li.list-inline 
-                                a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border categories
-                            li.list-inline
-                                a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border salle
-                            -if(!user.id)
-                                li.list-inline
-                                    a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border sign in
-                                li.list-inline
-                                    a.text-capitalize.text-decoration-none.text-white.d-block.px-2.py-2.link-h.border-1.rounded.border(href="/singup") sign up
-                            -else 
-                                li.profile.list-inline.position-relative
-                                    div.position-relative.overflow-hidden.rounded-circle.border.border-2(id="profile" tabindex="0")
-                                        img.w-100.h-100(src= "/images/"+ user.srcImg alt="image user")
-                                    div.rounded.position-absolute
-                                        div
-                                            p.text-capitalize.text-white.m-0.py-3.px-2= user.name
-                                        div 
-                                            a.text-capitalize.d-block.py-3.px-2(href="http://") setting
-                                        div 
-                                            button.border-0.text-white.w-100.d-block.py-3.px-2(id="logout") logOut
+        .container-fluid.p-0
+            .nav.p-0.d-flex.justify-content-between.align-items-stretch
+                .logo-img.flex-grow-1.py-3.px-3.d-flex.align-items-center
+                    a(class="border-0" href="/data/dach")
+                        img(class="logo" src="/public/images/logo.png" alt=" image logo site", )
+                //- .search.flex-grow-1.d-flex.justify-content-end.justify-content-sm-end.justify-content-md-center
+                //-     .form.c-pointer
+                //-         button.btn(id="show_from")
+                //-             <i class="text-white fas fa-search"></i>
+                .nav-ul.px-3.tra-1.d-flex.align-items-stretch.justify-content-end(id="nav")  
+                    div.d-flex.align-items-stretch.justify-content-end
+                        div.d-flex.align-items-center 
+                            div.mx-2.btn-search.rounded.d-flex.align-items-stretch.overflow-hidden
+                                input.py-2.px-3(type="text" name="search" placeholder="enter something") 
+                                button.py-2.px-3.d-flex.align-items-center.justify-content-center(id="show_from")
+                                    <i class="fas fa-search"></i>
+                        div.d-flex.align-items-stretch 
+                            button.a.py-2.px-3 
+                                <i class="far fa-bell"></i>
+                        div.d-flex.align-items-stretch.position-relative
+                            button.a.py-2.px-3
+                                img.rounded-circle(src="/images/profile.png" alt=" image profile admin ")
+                                span  ahhahshs
+                            div.d-none.set.rounded.position-absolute
+                                div
+                                    p.text-capitalize.text-white.m-0.py-3.px-2 abdelkall jsjsjsjsj
+                                div 
+                                    a.text-white.text-capitalize.d-block.py-3.px-2(href="http://") setting
+                                div 
+                                    button.border-0.text-white.w-100.d-block.py-3.px-2(id="logout") logOut
+
+                            //- -if(!user.id)
+
+                            //- -else 
+
 
 
                 button.text-white.btn.d-block.d-md-none(id="show-nav") 
