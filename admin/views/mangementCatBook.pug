@@ -1,0 +1,33 @@
+//- include file head
+include ../components/global/head.pug
+//- include file start body 
+include ../components/global/body.pug
+//- include file haeder
+include ../components/global/header.pug
+
+.overly.no-show.position-fixed.w-100.h-100.top-0.start-0#overly
+.managment.d-flex
+    //- include file haeder
+    include ../components/global/navigation.pug
+    .content-managment.py-5.px-3
+        div.d-flex.justify-content-between.align-items-center 
+            h1.text-capitalize.fs-3 mangment category book
+            span.d-block.rounded.fs-3.d-flex.justify-content-center.align-items-center#link
+                <i class="fas fa-times text-white"></i> 
+        .all-cats-book.py-2 
+            div.py-5
+                div.d-flex.justify-content-end.align-items-center.py-2
+                    a.rounded.p-2.text-black.text-decoration-none.text-capitalize(href="/data/addcat/" rel="noopener noreferrer") add category 
+                each cat in cats 
+                    div(id=cat._id)
+                        div.border-start.border-dark.border-3.d-flex.justify-content-between.align-items-center.px-5.py-3.my-2.bg-white.rounded 
+                            div.text-capitalize=cat.name
+                            div 
+                                button.rounded.text-white.py-2.px-3.mx-2.btn-edi(data-id=cat._id data-name=cat.name)  <i class="fas fa-edit"></i>
+                                button.rounded.text-white.py-2.px-3.mx-2.btn-del(data-id=cat._id data-name=cat.name) <i class="fas fa-trash"></i>
+
+//- include file haeder
+include ../components/pages/boxMesDel.pug
+
+//- include file singup
+script(src="/public/js/managmentCatBook.js")
