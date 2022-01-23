@@ -1,0 +1,204 @@
+:root {
+  --primary: #ff4101be;
+  --secondary: #091016;
+}
+* {
+  user-select: none;
+}
+body {
+  background: #f9faff;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  background: none;
+  color: #818a96;
+}
+.overly.no-show {
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0);
+}
+.overly {
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.418);
+}
+.success {
+  transition: border 0.2s linear;
+  border: 2px solid var(--secondary) !important;
+}
+.error {
+  transition: border 0.2s linear;
+  border: 2px solid #ff0000 !important;
+}
+
+/* srart header  */
+.logo-img {
+  background-color: var(--secondary);
+  max-width: 170px;
+}
+img.logo {
+  width: 100px;
+  max-width: 100px;
+}
+.nav-ul {
+  flex-grow: 7;
+}
+.nav-ul div div:first-child div {
+  background-color: #eef5fd;
+}
+button {
+  transition: 0.2s ease-in;
+}
+.nav-ul div > div:first-child div > button:hover {
+  background-color: var(--primary);
+}
+.nav-ul div > div:not(div:first-child) button.a:hover {
+  background-color: #eef5fd;
+}
+.nav-ul div > div:last-child img {
+  width: 30px;
+  max-width: 30px;
+  transition: 0.2s 0.1s ease-in;
+}
+.nav-ul div > div:not(div:first-child) > button.a:hover img {
+  transform: rotate(-4deg) scale(1.05, 1.05);
+}
+.nav-ul div > div:last-child div {
+  right: 0px;
+  top: 60px;
+  width: 200px;
+}
+.nav-ul .set {
+  background-color: var(--secondary);
+  box-shadow: -2px -2px 0 2px var(--primary);
+  transition: 0.3s linear;
+}
+.nav-ul .set:hover {
+  box-shadow: 0px 0px 0 4px var(--primary);
+}
+.nav-ul .set button {
+  background-color: var(--primary);
+}
+/* end header  */
+
+/* start div .navigation */
+.navigation {
+  max-width: 169px;
+}
+.navigation .content {
+  background-color: var(--secondary);
+  min-height: 100vh;
+  top: 0;
+}
+.navigation .content a {
+  transition: background-color 0.2s ease-in-out;
+  font-size: 12px;
+}
+.navigation .content a:hover {
+  background-color: rgba(255, 255, 255, 0.274);
+}
+/* end div  .navigation */
+
+.content-managment {
+  flex-grow: 7;
+}
+.content-managment h1 {
+  color: var(--secondary);
+}
+.content-managment h1 ~ span {
+  background-color: var(--secondary);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 0px 20px 5px #3a1306, -7px -8px 0px -2px #ff5722;
+}
+.content-managment h1 ~ span:hover {
+  box-shadow: 0px 0px 0px 6px #ff57229e;
+}
+.all-cats-book div:first-child div:first-child a {
+  background-color: var(--primary) !important;
+  transition: 0.3s;
+}
+.all-cats-book div:first-child div:first-child a:hover {
+  background-color: var(--secondary) !important;
+  color: #fff !important;
+}
+.all-cats-book div:first-child div:not(div:first-child) button:first-child {
+  background-color: #00663a;
+}
+.all-cats-book div:first-child div:not(div:first-child) button:last-child {
+  background-color: #b10101;
+}
+.loading {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 4px solid;
+  background-color: var(--primary);
+  animation: loding 1s linear infinite;
+  border-color: #27120c #27120c #27120c var(--primary);
+}
+.del-mes {
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-40%, 40%) scale(0, 0);
+  box-shadow: -10px -10px 0px 1px #091016;
+  transition: 0.3s linear;
+  transition: 0.3s 0.1s ease-in-out;
+}
+.del-mes.show {
+  transform: translate(-50%, -50%) scale(1, 1);
+}
+.del-mes:hover {
+  box-shadow: 0px 0px 0px 10px #091016;
+}
+.del-mes h2 ~ span {
+  cursor: pointer;
+}
+.del-mes div:last-child button {
+  pointer-events: none;
+  width: 120px;
+}
+.del-mes div:nth-child(3) input:focus {
+  border-color: var(--primary) !important;
+}
+.del-mes div:last-child button.delete-cat {
+  background-color: #b10101 !important;
+  color: #fff !important;
+  pointer-events: auto;
+}
+.loading {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 4px solid;
+  background-color: #27120c;
+  animation: loding 1s linear infinite;
+  border-color: #ff4101be #ff4101be #ff4101be #27120c;
+}
+.del-mes div:last-child button.delete-seccess{
+  background-color: var(--primary) !important;
+}
+@keyframes loding {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.content-managment {
+  flex-grow: 7;
+}
+.content-managment h1 {
+  color: var(--secondary);
+}
+.content-managment h1 ~ p {
+  color: var(--primary);
+}
