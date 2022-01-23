@@ -11,11 +11,23 @@ const message = document.getElementById("message");
 // span in redirct page
 const link = document.getElementById("link");
 
+// old name content
+
+const old = document.getElementById("old");
+
 ///
 
 // array in error
 const err = [];
-
+// get id and name category in url
+const r = new URL(decodeURI(document.URL));
+const cat = {
+  id: decodeURIComponent(r.pathname).split("/")[
+    r.pathname.split("/").length - 2
+  ],
+  name: decodeURIComponent(r.pathname).split("/").pop(),
+};
+old.textContent = cat.name;
 ////
 
 /// create functions
@@ -84,30 +96,24 @@ send.addEventListener("click", (e) => {
   document.documentElement.style.setProperty("--after", "1");
   send.firstElementChild.textContent = null;
   addClass([send.firstElementChild, "loading"]);
-  const dt = {
-    name: category.value.toLowerCase(),
-  };
+  cat.name = category.value;
   fetch("/data/editcat/", {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(dt),
+    body: JSON.stringify(cat),
     method: "post",
   })
     .then((res) => res.json())
     .then((res) => {
       category.value = null;
-      send.firstElementChild.textContent = "send";
+      send.firstElementChild.textContent = "update";
       removeClass([send.firstElementChild, "loading"]);
       addClass([message, "bottom-0"]);
-      if (res.message) {
+      if (res.message && typeof res.message === "boolean") {
+        old.textContent = cat.name;
         message.firstElementChild.firstElementChild.textContent =
-          "seccess opretion add category";
-        return;
-      }
-      if (!res.message) {
-        message.firstElementChild.firstElementChild.textContent =
-          "this is name is found";
+          "seccess opretion update";
         return;
       }
       console.log("server in errr 500");
