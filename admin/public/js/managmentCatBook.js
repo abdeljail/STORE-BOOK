@@ -54,7 +54,7 @@ boxBtnsDels.forEach((btnDel) => {
 boxBtnsEdis.forEach((btnEdi) => {
   btnEdi.addEventListener(
     "click",
-    (e) => (window.location.href = `/data/editcat/${e.target.dataset.id}`)
+    (e) => (window.location.href = `/data/editcat/${e.target.dataset.id}/${e.target.dataset.name}`)
   );
 });
 
