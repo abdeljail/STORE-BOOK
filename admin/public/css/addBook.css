@@ -1,0 +1,199 @@
+:root {
+  --primary: #ff4101be;
+  --secondary: #091016;
+}
+*{
+  user-select: none;
+}
+body {
+  background: #f9faff;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: none;
+  color: #818a96;
+}
+.success {
+  transition: border 0.2s linear;
+  border: 2px solid var(--secondary) !important;
+}
+.error {
+  transition: border 0.2s linear;
+  border: 2px solid #ff0000 !important;
+}
+
+/* srart header  */
+.logo-img {
+  background-color: var(--secondary);
+  max-width: 170px;
+}
+img.logo {
+  width: 100px;
+  max-width: 100px;
+}
+.nav-ul {
+  flex-grow: 7;
+}
+.nav-ul div div:first-child div {
+  background-color: #eef5fd;
+}
+button {
+  transition: 0.2s ease-in;
+}
+.nav-ul div > div:first-child div > button:hover {
+  background-color: var(--primary);
+}
+.nav-ul div > div:not(div:first-child) button.a:hover {
+  background-color: #eef5fd;
+}
+.nav-ul div > div:last-child img {
+  width: 30px;
+  max-width: 30px;
+  transition: 0.2s 0.1s ease-in;
+}
+.nav-ul div > div:not(div:first-child) > button.a:hover img {
+  transform: rotate(-4deg) scale(1.05, 1.05);
+}
+.nav-ul div > div:last-child div {
+  right: 0px;
+  top: 60px;
+  width: 200px;
+}
+.nav-ul .set {
+  background-color: var(--secondary);
+  box-shadow: -2px -2px 0 2px var(--primary);
+  transition: 0.3s linear;
+}
+.nav-ul .set:hover {
+  box-shadow: 0px 0px 0 4px var(--primary);
+}
+.nav-ul .set button {
+  background-color: var(--primary);
+}
+/* end header  */
+
+/* start div .navigation */
+.navigation {
+  max-width: 169px;
+}
+.navigation .content {
+  background-color: var(--secondary);
+  min-height: 100vh;
+  top: 0;
+}
+.navigation .content a {
+  transition: background-color 0.2s ease-in-out;
+  font-size: 12px;
+}
+.navigation .content a:hover {
+  background-color: rgba(255, 255, 255, 0.274);
+}
+/* end div  .navigation */
+
+.content-book {
+  flex-grow: 7;
+}
+.content-book h1 {
+  color: var(--secondary);
+}
+.content-book h1 ~ span {
+  background-color: var(--secondary);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 0px 20px 5px #3a1306, -7px -8px 0px -2px #ff5722;
+}
+.content-book h1 ~ span:hover {
+  box-shadow: 0px 0px 0px 6px #ff57229e;
+}
+.content-book .from  > div {
+  width: 680px;
+  background-color: #fff;
+  border-color: var(--primary) !important;
+}
+.content-book .from form > div > div {
+  width: 50% !important;
+}
+.content-book .from form div input,
+.content-book .from form div button {
+  border-radius: 4px !important;
+}
+.from button {
+  background-color: var(--primary) !important;
+  text-transform: capitalize;
+}
+.from button:focus {
+  box-shadow: none !important;
+}
+.from .not-allowed {
+  background-color: #ff400180 !important;
+  cursor: not-allowed !important;
+}
+.from .right textarea {
+  resize: none;
+  height: 225px;
+}
+.from .left > div:nth-child(5) span {
+  height: 40px;
+  color: #818a96;
+  cursor: pointer;
+}
+.from .left > div:nth-child(5) > div {
+  min-height: 80px;
+  height:122px;
+}
+
+.from .left > div:nth-child(5) > div div {
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  color: #818a96;
+}
+.from .left > div:nth-child(5) > div div:hover {
+  color: #fff;
+  background-color: var(--primary);
+}
+.from .left > div:last-child label {
+  cursor: pointer;
+  color: #818a96;
+}
+.loading {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 4px solid;
+  background-color: var(--primary);
+  animation: loding 1s linear infinite;
+  border-color: #27120c #27120c #27120c var(--primary);
+}
+
+@keyframes loding {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.message {
+  width: 280px;
+  max-width: 280px;
+  z-index: 4;
+  bottom: -400px;
+  transition: 0.5s linear;
+  background-color: #44627a !important;
+  border-color: #7a4444 !important;
+  right: 10px !important;
+}
+.message * {
+  color: #fff !important;
+}
+.message h4 span:last-child {
+  cursor: pointer;
+}
