@@ -1,0 +1,51 @@
+//- include file head
+include ../components/global/head.pug
+//- include file start body 
+include ../components/global/body.pug
+//- include file haeder
+include ../components/global/header.pug
+
+
+.book.d-flex
+
+    //- include file haeder
+    include ../components/global/navigation.pug
+
+    .content-book.py-5.px-3
+        div.d-flex.justify-content-between.align-items-center 
+            h1.text-capitalize.fs-3 add book
+            span.d-block.rounded.fs-3.d-flex.justify-content-center.align-items-center#link
+                <i class="fas fa-times text-white"></i> 
+        .from.d-flex.justify-content-center.align-items-center.pt-5
+            form.w-100(action="/data/addbook", method="post" enctype="multipart/form-data") 
+                div.d-flex.justify-content-between
+                    .left.py-5.px-4  
+                        //- include component name 
+                        - Name = "title"
+                        include ../components/pages/inputName.pug
+                        //- include component name 
+                        - Name = "name"
+                        include ../components/pages/inputName.pug
+                        //- include component name 
+                        - Name = "price"
+                        include ../components/pages/inputName.pug
+                        //- include component name 
+                        - Name = "number"
+                        include ../components/pages/inputName.pug
+                        div.py-1.position-relative
+                            input.d-none(type="text" name="select")
+                            span.d-block.border.py-2.px-3.rounded#select(type="text" name="select")  Select category the book
+                            div.d-none.overflow-auto.bg-white.position-absolute.w-100.border.border-1#options
+                                each cat in catBooks
+                                    div(data-id=cat._id data-name=cat.name tabindex="0").px-3.py-2=cat.name 
+                        div.py-m
+                            label.d-block.border.py-2.px-3.rounded(for="img") Select image book        
+                                input.d-none#img(type="file" name="img")
+                    .right.py-5.px-4 
+                        textarea.w-100.border.py-2.px-3.rounded#descreption(name="descreption" placeholder="Enter description book")
+                        - Name = "send"
+                        //- include component button send
+                        include ../components/pages/buttonSend.pug
+
+//- include file singup
+script(src="/public/js/addBook.js")
