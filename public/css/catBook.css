@@ -1,0 +1,209 @@
+:root {
+  --primary: #eb4c13;
+  --secondary: #000;
+  --secondary1: #0a0909;
+  --pr: #000000e0;
+}
+* {
+  user-select: none;
+}
+body.no_scroll {
+  overflow: hidden !important;
+}
+body,
+.home {
+  overflow-x: hidden;
+}
+.spaner {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 4px solid #eee;
+  background-color: #ff7b4b8e;
+  animation: loding 1s linear infinite;
+  border-color: #ff7b4b8e #eee #eee #eee;
+}
+@keyframes loding {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.show-nav {
+  display: block !important;
+  top: 40px;
+  display: block !important;
+  background-color: var(--secondary);
+  top: 61px;
+  width: 100%;
+  padding: 10px 0;
+  order: 3;
+}
+.show-nav a {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.tra-1 {
+  transition: 0.4s ease-out;
+}
+.deep {
+  background-color: var(--pr);
+  left: -100%;
+  transition: 0.3s ease-out;
+  z-index: 12;
+}
+.send_form {
+  left: -100%;
+  top: 30%;
+  transition: 0.2s ease-out;
+  transform: translate(-50%, -50%);
+}
+.overly {
+  left: 0%;
+  z-index: 13;
+}
+.send_form.overly {
+  transition-delay: 0.2s;
+  left: 50%;
+}
+.send_form.overly input {
+  width: 320px;
+}
+.send_form.overly button {
+  background-color: var(--primary);
+}
+.send_form.overly button:focus {
+  box-shadow: none;
+}
+.link-h {
+  border-color: var(--secondary) !important;
+  transition: border 0.2s ease;
+}
+.link-h:hover {
+  border-color: var(--primary) !important;
+}
+input[type="search"] {
+  outline: none;
+  /* border-color: currentColor !important; */
+}
+input[type="search"] {
+  outline: none;
+}
+i {
+  font-weight: 500;
+}
+img.logo {
+  width: 100px;
+  max-width: 100px;
+}
+/* start hader */
+header button:focus {
+  box-shadow: none !important;
+}
+header ul {
+  flex-grow: 2;
+}
+.profile > div:first-child {
+  width: 50px;
+  height: 50px;
+  border-color: var(--primary) !important;
+  cursor: pointer;
+}
+.profile > div:first-child::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #eb4d13;
+  top: 0;
+  left: 0;
+  transform: scale(0, 0) rotate(40deg);
+  transition: 0.3s ease-in-out;
+}
+.profile > div:first-child img {
+  transition: 0.2s ease 0.1s;
+}
+.profile > div:first-child:hover img {
+  transform: scale(1.5, 1.5) rotate(-10deg);
+}
+.profile > div:first-child:hover:after {
+  transform: scale(1.5, 1.5) rotate(-10deg);
+  background-color: #eb4d1363;
+  border: 0%;
+}
+.profile > div:last-child {
+  width: 200px;
+  background-color: var(--pr);
+  top: 63px;
+  right: -10px;
+  transform: translateY(80px) scale(0, 0);
+  transition: 0.3s ease-in-out;
+}
+.profile > div:last-child.active {
+  transform: translateY(0px) scale(1, 1);
+  z-index: 45;
+}
+.profile > div:last-child button {
+  background-color: var(--primary);
+}
+/* end header */
+
+/* start section class catbooks */
+section .head a {
+  background-color: var(--secondary);
+  box-shadow: -7px -8px 0px -2px var(--primary);
+  transition: 0.2s linear;
+}
+section .head a:hover {
+  box-shadow: 0px 0px 0px 6px var(--primary);
+}
+section .pack > div {
+  background-color: #f1f1f1;
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: -7px -8px 0px -2px var(--secondary),
+    -4px -4px 4px -2px #bebebe inset;
+}
+section .pack > div:hover {
+  box-shadow: 0px 0px 0px 6px var(--secondary);
+}
+section .pack img {
+  height: 200px;
+}
+section .pack > div div:last-child a {
+  color: var(--primary);
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+}
+section .pack > div div:nth-child(2) h6 {
+  font-size: 12px;
+}
+section .pack > div div:last-child a:hover {
+  color: var(--secondary);
+}
+/* end section class catbooks   */
+
+/* start footer */
+
+footer {
+  background-color: var(--secondary1);
+}
+footer a.link-h {
+  border-color: --secondary1 !important;
+  /* reset currentColor */
+}
+footer h4 {
+  color: var(--bs-gray-600);
+}
+footer p {
+  color: #727272 !important;
+}
+footer a.h-4 {
+  font-size: 12px !important;
+}
+footer .footer-bottom {
+  border-color: #181b1e !important;
+}
+/* end footer */
