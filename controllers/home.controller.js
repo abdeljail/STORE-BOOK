@@ -1,8 +1,10 @@
+const modelGetSomeBooks = require("../models/home.model");
+
 ////
 
-// create function get singup page and data
+// create function get home page and data
 
-exports.getDataAndHome = (request, response, next) => {
+exports.getPageHome = (request, response, next) => {
   response.render("home", {
     srcLinkCss: "./css/style.css",
     namePage: "home",
@@ -15,3 +17,15 @@ exports.getDataAndHome = (request, response, next) => {
 };
 
 ///
+
+// create function get data for page home
+
+exports.getDataHome = (request, response) => {
+  modelGetSomeBooks
+    .getLimitBooks(request.body.id, request.body.limit)
+    .then(async (books) => {
+      await response.json({
+        books: books,
+      });
+    });
+};

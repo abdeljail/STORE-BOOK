@@ -7,6 +7,10 @@
 * {
   user-select: none;
 }
+button {
+  border: 0;
+  outline: 0;
+}
 body.no_scroll {
   overflow: hidden !important;
 }
@@ -151,101 +155,123 @@ header ul {
 }
 /* end header */
 
-/* start .content-silder  */
-
-section.s {
-  min-height: 600px;
-  /* overflow-x: hidden; */
-}
-section.s > .box-slider {
-  height: 600px;
-  max-height: 600px;
-}
-section.s div.icon {
-  z-index: 4;
-}
-section.s div.icon button {
-  height: 180px;
-  background: none;
-  border-color: transparent !important ;
-}
-section.s div.icon button:focus {
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0px 2px #fff;
-}
-section.s div.icon button i {
-  font-size: 50px;
-}
-.content-silder .position-relative {
-  height: 500px;
-}
-.content-silder .position-relative div:first-child {
-  z-index: 3;
-}
-.box-slider .active-silder {
-  transform: translateX(100%);
-  z-index: -2;
-}
-.box-slider .active-left {
-  transform: translateX(-100%);
-  z-index: -2;
-}
-.box-slider > div > div {
-  transition: transform 0.4s ease;
-}
-.box-pack {
-  margin-top: -200px;
-  z-index: 0;
-}
-.box-pack .pack > div {
-  box-shadow: 0px 15px 14px -7px #ddd;
-}
-.box-pack > div > div > div > div > div:nth-child(2) a img {
-  height: 200px;
-}
-.box-pack > div > div > div > div > div:last-child a {
-  color: var(--primary) !important;
-  font-size: 12px !important;
-}
-.box-pack h6 {
-  line-height: 18px;
-  font-size: 11px;
-}
-
-section.fb {
-  margin-top: 200px;
-}
-section .head a {
+/* start section class book */
+section .head button {
   background-color: var(--secondary);
   box-shadow: -7px -8px 0px -2px var(--primary);
   transition: 0.2s linear;
 }
-section .head a:hover {
+section .head button:hover {
   box-shadow: 0px 0px 0px 6px var(--primary);
 }
-section > div > div > .pack > div {
-  background-color: #f1f1f1;
-  transition: 0.2s ease-in-out;
-  box-shadow: -7px -8px 0px -2px var(--secondary);
+section .img img {
+  width: 230px;
+  max-width: 230px;
 }
-section > div > div > .pack > div:hover {
-  box-shadow: 0px 0px 0px 6px var(--secondary);
+section article h4 {
+  font-size: 16px;
+  line-height: 1.4;
 }
-section > div > div > .pack img {
-  height: 200px;
+section article h4 + p span:first-child {
+  background-color: #e5e5e5;
 }
-section > div > div > .pack > div div:last-child a {
+section article h4 + p span:last-child {
   color: var(--primary);
+}
+section article strong {
+  background-color: var(--secondary);
+}
+section article > div:last-child div:last-child p {
   font-size: 14px;
-  transition: 0.2s ease-in-out;
-}
-section > div > div > .pack > div div:nth-child(2) h6 {
-  font-size: 12px;
-}
-section > div > div > .pack > div div:last-child a:hover {
   color: var(--secondary);
 }
-/* end .content-silder  */
+section .content-shop {
+  box-shadow: 0 0 0 4px #e5e5e5;
+}
+section .content-shop > div:first-child {
+  font-size: 12px;
+}
+section .content-shop > div:nth-child(2) p {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--primary);
+}
+section .content-shop > div:nth-child(3) div:first-child {
+  font-size: 15px;
+}
+section .content-shop > div:nth-child(3) > div:last-child > div:first-child {
+  background-color: #009688;
+  cursor: pointer;
+}
+section .content-shop > div:nth-child(3) > div:last-child > div:last-child {
+  overflow-y: auto;
+  height: 120px;
+}
+section
+  .content-shop
+  > div:nth-child(3)
+  > div:last-child
+  > div:last-child
+  > div {
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+section
+  .content-shop
+  > div:nth-child(3)
+  > div:last-child
+  > div:last-child
+  > div:hover {
+    background-color: #009687a8;
+    color: #fff;
+}
+section .content-shop > div:last-child > button:last-child {
+  background-color: var(--primary);
+  box-shadow: 0 0 0 0 #8f2600;
+  transition: 0.2s linear;
+}
+section .content-shop > div:last-child > button:first-child {
+  box-shadow: 0 0 0 0 #181b1e;
+  transition: 0.2s linear;
+}
+section .content-shop > div:last-child > button:first-child:hover {
+  box-shadow: 0 0 10px 1px #181b1e;
+}
+section .content-shop > div:last-child > button:last-child:hover {
+  box-shadow: 0 0 10px 1px #ff440085;
+}
+.loading {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 4px solid;
+  background-color: #27120c;
+  animation: loding 1s linear infinite;
+  border-color: #ff4101be #ff4101be #ff4101be #27120c;
+}
+@keyframes loding {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* end section class book   */
+
+
+.message {
+  width: 280px;
+  max-width: 280px;
+  z-index: 4;
+  bottom: -400px;
+  transition: 0.5s linear;
+}
+.message h4 span:last-child {
+  cursor: pointer;
+}
 
 /* start footer */
 

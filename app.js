@@ -3,7 +3,6 @@ const path = require("path");
 const morgan = require("morgan");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
-
 const app = express();
 
 const store = new MongoDBStore({
@@ -42,6 +41,10 @@ app.set("view engine", "pug");
 // client
 
 const home = require("./routers/home.router");
+const catBooks = require("./routers/catBooks.router");
+const book = require("./routers/book.router");
+const order = require("./routers/order.router");
+const selle = require("./routers/selle.router");
 const singUp = require("./routers/singUp.router");
 const singIn = require("./routers/singIn.router");
 const logOut = require("./routers/logOut.router");
@@ -53,6 +56,8 @@ const dach = require("./routers/dach.router");
 const addBook = require("./routers/addBook.router");
 const addCatBook = require("./routers/addCatBook.router");
 const editCatBook = require("./routers/editCatBook.router");
+const managmentCatBook = require("./routers/mangementCatBook.router");
+const deleteCatBook = require("./routers/deleteCatBook.router");
 
 ///
 
@@ -79,9 +84,23 @@ app.use("/", home);
 
 ///
 
-app.use("/", singUp);
+app.use("/", catBooks);
 
 ///
+
+app.use("/", book);
+
+///
+
+app.use("/", order);
+
+///
+
+app.use("/", selle);
+
+///
+
+app.use("/", singUp);
 
 ///
 
@@ -113,7 +132,15 @@ app.use("/", addCatBook);
 
 ///
 
+app.use("/", managmentCatBook);
+
+///
+
 app.use("/", editCatBook);
+
+///
+
+app.use("/", deleteCatBook);
 
 /// end pages the admins
 

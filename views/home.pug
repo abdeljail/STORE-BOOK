@@ -11,20 +11,42 @@ include ../components/global/header.pug
         input(class="px-2 border-start border-white border-bottom border-top border-2 py-1 outline-0 rounded-start" type="search" placeholder="dkldkldkdlkldkdldl")
         button(id="send" class="btn rounded-0 text-white" type="submit") <i class="fas fa-search"></i>
 .home
+    section.s.position-relative
+        div.icon.position-absolute.top-0 
+            button.border.border-2.rounded#btn-left 
+                i.text-dark.fas.fa-chevron-left
 
-
-
-
-
-
-
-
-
-
-
-
+        div.box-slider
+            .content.w-100.position-relative
+                -src="/image/silde1.PNG"
+                -nameCat = "front End"
+                -activeClass=""
+                //- include file silder
+                include ../components/pages/slider.pug
+                -src="/image/slide2.jpg"
+                -nameCat = "back end"
+                -activeClass="active-silder"
+                //- include file silder
+                include ../components/pages/slider.pug
+        div.icon.position-absolute.top-0.end-0 
+            button.border.border-2.rounded#btn-right  
+                i.text-dark.fas.fa-chevron-right
+    section.fb#front-end
+        .container-fluid
+            div.head.d-flex.justify-content-between.align-items-center 
+                h2.text-capitalize category books front End 
+                a.rounded-pill.py-2.px-3.d-block.text-white.text-capitalize.text-decoration-none(href="/catBooks/books front end" rel="noopener noreferrer") see more 
+            div#front-end-row.row.p-3
+    section.mt-5#back-end
+        .container-fluid
+            div.head.d-flex.justify-content-between.align-items-center 
+                h2.text-capitalize category books back End 
+                a.rounded-pill.py-2.px-3.d-block.text-white.text-capitalize.text-decoration-none(href="/catBooks/books%20design" rel="noopener noreferrer") see more 
+            div#back-end-row.row.p-3
+                
 
 
 //- include file footer
 include ../components/global/footer.pug
-script(src="./js/global.js") 
+script(src="./js/global.js" rel="preload") 
+script(src="./js/home.js" rel="preload") 

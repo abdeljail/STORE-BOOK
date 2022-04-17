@@ -7,7 +7,7 @@ let schemaBook = mongoose.Schema({
   price: Number,
   numberPage: Number,
   image: String,
-  categoryId: String,
+  categoryId: mongoose.ObjectId,
 });
 // create url connect db
 const url = "mongodb://localhost:27017/STOREBOOKS";

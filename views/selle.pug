@@ -1,0 +1,52 @@
+//- include file head
+include ../components/global/head.pug
+//- include file start body 
+include ../components/global/body.pug
+//- include file haeder
+include ../components/global/header.pug
+
+.deep.position-absolute.w-100.h-100(id="deep")
+.send_form.pt-5.position-absolute.d-flex.justify-content-center.align-items-start(id="from_search")
+    form.d-flex.justify-content-start(action="" method="get")
+        input(class="px-2 border-start border-white border-bottom border-top border-2 py-1 outline-0 rounded-start" type="search" placeholder="dkldkldkdlkldkdldl")
+        button(id="send" class="btn rounded text-white" type="submit") <i class="fas fa-search"></i>
+section.py-5.selle
+    .content-selle 
+        .container-fluid
+            div.py-5.head.d-flex.justify-content-between.align-items-center 
+                h1.text-capitalize Show details the book  for selle
+                button.border-0.rounded.py-2.px-3.d-block.text-white.text-capitalize.text-decoration-none#back <i class="fas fa-times"></i>
+            .show-selle.row.justify-content-center
+                //- article.justify-content-center.content-s.d-flex.px-2.col-12.col-sm-12.col-md-9.col-lg-7
+                //-     .img.px-2
+                //-         img.rounded.border-2.border(src="/images/" + book[0].image , alt="image book" )
+                //-     .info.px-2
+                //-         h4.py-2=book[0].title
+                //-         p.px-1.py-2 
+                //-             span.px-3.py-2  Author
+                //-             span.px-3.py-2=book[0].Author
+                //-         p Number pages the book #[= book[0].numberPage ]
+                //-         strong.text-white.rounded.px-3.py-2=book[0].price
+                //-         div.py-4 
+                //-             p=book[0].description
+
+//- include file message  
+include ../components/global/message.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- include file footer
+include ../components/global/footer.pug
+script(src="/js/global.js" rel="preload")
+script(src="/js/selle.js" rel="preload")
